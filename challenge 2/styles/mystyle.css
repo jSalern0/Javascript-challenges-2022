@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   width: 100%;
   background-image: url('https://static.wixstatic.com/media/ca268c_8def332e526847c4ac5aa80da65c5244~mv2.gif');
-  background-size: cover; 
+  background-size: cover;
 }
 
 .fusos {
@@ -22,6 +22,7 @@ body {
   flex-direction: column;
   margin: 10px;
   align-items: center;
+  font-family: helvetica;
 }
 
 .container {
@@ -32,6 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50vh;
+  font-family: helvetica;
 }
 
 .clockAms {
@@ -56,9 +58,19 @@ body {
   margin: 10px;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .planet img {
   width: 100px;
   margin: 10px;
+  animation: rotate 8s linear infinite;
 }
 
 .blue {
