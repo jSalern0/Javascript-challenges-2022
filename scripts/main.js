@@ -19,7 +19,7 @@ var shipParameters = document.getElementsByTagName('h1')[0];
 var fuel = document.getElementsByTagName('p')[0];
 var throttle = document.getElementsByTagName('p')[1];
 var speed = document.getElementsByTagName('p')[2];
-var acceleration = document.getElementsByTagName('p')[3];
+//var acceleration = document.getElementsByTagName('p')[3];
 var shipEnvironment = document.getElementsByTagName('h1')[1];
 var gravity = document.getElementsByTagName('p')[4];
 var distance = document.getElementsByTagName('p')[5];
@@ -41,16 +41,16 @@ var updateTime = function() {
 function resetInterval(status) {
   if (status) {
     interval = setInterval(() => {
-      setParameters()
-      setEnvironment()
-      setSupplies()
+      setshipParameters()
+      setshipEnvironment()
+      setshipSupplies()
     }, 1000); // 1 second
   } else {
     clearInterval(interval)
   }
 }
 
-function setParameters() {
+function setshipParameters() {
   updateTime();
   fuelCapacity = oldFuelCapacity * (100 - time / 28748769);
   fuelCapacity = Math.round(fuelCapacity);
@@ -58,4 +58,12 @@ function setParameters() {
   fuel.innerHTML = 'FUEL: 93% -' + fuelCapacity + 'liters left';
   throttle.innerHTML = 'THROTTLE: 457';
   speed.innerHTML = 'SPEED: ' + currentSpeed;
+};
+
+function setshipEnvironment(){
+  updateTime();
+  minutes = startMinutes - passedMin;
+  seconds = startSeconds - passedSec;
+  distance.innerHTML = 'DISTANCE TRAVELED: ' + ;
+  arrival.innerHTML = 'ARRIVAL ESTIMATE: ' + months + 'Months' + days + ' Days, ' + hours + ' Hours, ' + minutes + ' minutes, ' + seconds + ' seconds.';
 };
