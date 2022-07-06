@@ -3,7 +3,11 @@ var clockSp = document.getElementsByClassName('clockSp')[0]
 var clockLdn = document.getElementsByClassName('clockLdn')[0]
 var clockTky = document.getElementsByClassName('clockTky')[0]
 var clockBjg = document.getElementsByClassName('clockBjg')[0]
-
+var bluePlanet = document.querySelector('.bluePlanet')
+var sp = document.getElementsByClassName('sp')[0]
+var london = document.getElementsByClassName('london')[0]
+var tokyo = document.getElementsByClassName('tokyo')[0]
+var beijing = document.getElementsByClassName('beijing')[0]
 
 const getHours = (fuso, sinal, clock) => {//arrow function
 
@@ -25,3 +29,7 @@ setInterval(() => {
   getHours(7, '+', clockTky)
   getHours(6, '+', clockBjg)
 }, 1000)
+
+bluePlanet.addEventListener('click', () => {
+  sp.classList.toggle('blue') //
+})
