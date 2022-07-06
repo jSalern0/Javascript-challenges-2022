@@ -13,7 +13,9 @@ var fuelCapacity = 523847828772;
 var oldFuelCapacity = 523847828772;
 var currentSpeed = 3800;
 var oldSpeed = 3800;
+var distTraveled = 369001;
 var foodLeft = 0;
+var potWaterLeft = 0;
 var interval = 0;
 var shipParameters = document.getElementsByTagName('h1')[0];
 var fuel = document.getElementsByTagName('p')[0];
@@ -28,6 +30,7 @@ var atmosphere = document.getElementsByTagName('p')[7];
 var shipSupplies = document.getElementsByTagName('h1')[2];
 var food = document.getElementsByTagName('p')[8];
 var potWater = document.getElementsByTagName('p')[9];
+var alerta = document.getElementsByTagName('span')[0];
 
 
 
@@ -60,11 +63,12 @@ function setshipParameters() {
   speed.innerHTML = 'SPEED: ' + currentSpeed;
 };
 
-function setshipEnvironment(){
+function setshipEnvironment() {
   updateTime();
   minutes = startMinutes - passedMin;
   seconds = startSeconds - passedSec;
-  distance.innerHTML = 'DISTANCE TRAVELED: ' + distance ; //NOT WORKING, fix
+  distTraveled = currentSpeed + oldSpeed;
+  distance.innerHTML = 'DISTANCE TRAVELED: ' + distTraveled;
   arrival.innerHTML = 'ARRIVAL ESTIMATE: ' + months + ' Months, ' + days + ' Days, ' + hours + ' Hours, ' + minutes + ' minutes, ' + seconds + ' seconds.';
 };
 
@@ -72,18 +76,20 @@ function setshipSupplies() {
   updateTime();
   foodLeft = ((months * 30 + days) * 2 * 99) - (time * 2 * 99);
   food.innerHTML = 'FOOD: '  + foodLeft;
-  potWater.innerHTML = 'POTABLE WATER: ' + potWater / 2 * 5; //NOT WORKING, fix
+  potWaterLeft = ((months * 30 + days) * 2 * 99) - (time * 2 * 99);
+  potWater.innerHTML = 'POTABLE WATER: ' + (potWaterLeft / 2 * 5); //NOT WORKING, fix
 }
 
 resetInterval(true) //alert and pause after x seconds
 setTimeout(() => {
+  resetInterval(false)
   alert('!!! METEOR SHOWER !!!')
   resetInterval(true)
-}, 3000);
+}, 8000);
 
 setTimeout(() => { // so that it stops after running for x seconds
 	resetInterval(false)
 	//clearInterval(interval)
 	alerta.innerHTML = 'ERRO'
 	console.log('teste');
-}, 10000); //arrow function
+}, 14000); //arrow function
