@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   width: 100%;
+  background-image: url('https://static.wixstatic.com/media/ca268c_8def332e526847c4ac5aa80da65c5244~mv2.gif');
 }
 
 .fusos {
@@ -37,8 +38,7 @@ body {
 
 /*  background-color: rgba(255, 255, 255, 0.5);*/
   background-image: radial-gradient(circle, #0077ff 0%, #00ffaa 100%);
-  border: 1px solid #000;
-  border-radius: 3%;
+  border-radius: 50px;
   color: #fff;
   display: flex;
   font-size: 60px;
@@ -61,5 +61,17 @@ body {
 }
 
 .blue {
-  color: blue;
+  color: CornflowerBlue;
+}
+
+.grey {
+  color: darkgray;
+}
+
+.yellow {
+  color: GoldenRod;
+}
+
+.red {
+  color: Tomato;
 }

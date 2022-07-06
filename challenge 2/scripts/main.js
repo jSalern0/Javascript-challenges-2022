@@ -4,6 +4,10 @@ var clockLdn = document.getElementsByClassName('clockLdn')[0]
 var clockTky = document.getElementsByClassName('clockTky')[0]
 var clockBjg = document.getElementsByClassName('clockBjg')[0]
 var bluePlanet = document.querySelector('.bluePlanet')
+var greyPlanet = document.querySelector('.greyPlanet')
+var yellowPlanet = document.querySelector('.yellowPlanet')
+var redPlanet = document.querySelector('.redPlanet')
+
 var sp = document.getElementsByClassName('sp')[0]
 var london = document.getElementsByClassName('london')[0]
 var tokyo = document.getElementsByClassName('tokyo')[0]
@@ -32,4 +36,16 @@ setInterval(() => {
 
 bluePlanet.addEventListener('click', () => {
   sp.classList.toggle('blue') //
+})
+
+greyPlanet.addEventListener('click', () => {
+  london.classList.toggle('grey') //
+})
+
+yellowPlanet.addEventListener('click', () => {
+  tokyo.classList.toggle('yellow') //
+})
+
+redPlanet.addEventListener('click', () => {
+  beijing.classList.toggle('red') //
 })
