@@ -38,3 +38,52 @@ div {
     background-color: #fff;
     font-family: helvetica;
 }
+
+#weather {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 10px;
+  position: absolute;
+  width: auto;
+  height: max-content;
+  margin-left: auto;
+  top: 55px;
+  right: 95px;
+  bottom: 20%;
+  padding: 20px;
+  background-color: #fff;
+  font-family: helvetica;
+}
+
+#city {
+  display: flex;
+      position: absolute;
+      width: auto;
+      height: max-content;
+      margin-left: 50px;
+      top: 235px;
+      left: 72px;
+      /* right: 190px; */
+      bottom: 20%;
+      padding: 20px;
+      background-color: #fff;
+      font-family: helvetica;
+}
+
+#buttonWeather {
+  display: flex;
+  position: absolute;
+  width: auto;
+  height: max-content;
+  margin-left: auto;
+  top: 235px;
+  left: 334px;
+  border: 3px solid black;
+  color: black;
+  border-radius: 10px;
+  bottom: 20%;
+  padding: 20px;
+  background-color: steelblue;
+  font-family: helvetica;
+  font-weight: bold;
+}

@@ -184,9 +184,70 @@ console.log(request2);
       // show full JSON object
       console.log(response);
 			data = {duration: response.routes[0].duration, distance: response.routes[0].distance};
-
-			//xxxxx
+      insertInfo();
+			getAPIweather(destCoord2, destCoord1)
 
     }
   );
 }
+
+
+function insertInfo() {
+	// get the sidebar and add the instructions
+const instructions = document.getElementById('instructions');
+//const steps = data.waypoints;
+
+//let tripInstructions = '';
+//for (const step of steps) {
+  //tripInstructions += `<li>${step.maneuver.instruction}</li>`;
+console.log(data.duration, data.distance);
+instructions.innerHTML = `<h3>From: 🚀 Landing point HHS</h3><p><strong>Trip duration: ${Math.floor(
+  data.duration / 60
+)} min 🚴 </strong></p> <p><strong>Distance: ${(data.distance / 1000).toFixed(1)} km</strong></p>`;
+}
+
+function getAPIweather(lat, long, city) {
+
+  // construct request
+  var request2 = lat && long //se lat e long tem valor
+	? 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=9299c3b8438eb825ce2949bce2ebb8f5' //atribuir esse endpoint
+	:  'http://api.openweathermap.org/data/2.5/weather?appid=9299c3b8438eb825ce2949bce2ebb8f5&q=' + city; //se nao, atribuir este endpoint
+
+console.log(request2);
+  // get current weather
+  fetch(request2)
+
+  // parse response to JSON format
+  .then
+  (
+    function(response)
+    {
+      return response.json();
+    }
+  )
+
+  // do something with response
+  .then
+  (
+    function(response)
+    {
+      // show full JSON object
+      console.log(response);
+			data['temp'] = response.main.temp;
+			insertInfo();
+			var degC = Math.floor(response.main.temp - 273.15);
+
+			document.getElementById('weather').innerHTML = response.name + '<br>';
+			document.getElementById('weather').innerHTML += degC + '&#176;C <br>';
+			document.getElementById('weather').innerHTML += response.weather[0].description + '<br>';
+			document.getElementById('weather').innerHTML += response.wind.speed + ' m/s Wind Speed';
+
+
+    }
+  );
+}
+
+document.getElementById('buttonWeather').addEventListener('click', () => {
+	var city = document.getElementById('city').value //get value of city typed
+	getAPIweather(false,false,city) //return by search
+});
