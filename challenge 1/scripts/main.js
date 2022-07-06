@@ -90,6 +90,6 @@ setTimeout(() => {
 setTimeout(() => { // so that it stops after running for x seconds
 	resetInterval(false)
 	//clearInterval(interval)
-	alerta.innerHTML = 'ERRO'
+	alerta.innerHTML = 'ERRORERRORERRORERRORERROR'
 	console.log('teste');
 }, 14000); //arrow function

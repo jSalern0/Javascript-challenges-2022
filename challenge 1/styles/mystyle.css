@@ -1,5 +1,42 @@
 body
 {
 	font-family: helvetica;
+	background-image: url('https://img.wallpapersafari.com/desktop/1600/900/32/30/fnSikw.jpg');
+	background-size: cover;
 
+}
+
+.dashboard img {
+	position: absolute;
+	border-radius: 90px;
+	width: 100%;
+}
+
+.Functionalities{
+	border: solid silver;
+	border-radius: 50px;
+	position: absolute;
+	margin: 20px;
+	width: 25%;
+	height: max-content;
+	top: 35%;
+	left: 100px;
+	padding: 20px;
+	background-color: lightgrey;
+	font-family: helvetica;
+}
+
+.Supplies{
+	border: solid silver;
+	border-radius: 50px;
+	position: absolute;
+	margin: 20px;
+	width: 25%;
+	height: max-content;
+	right: 90px;
+	top: 200px;
+	bottom: 20%;
+	padding: 20px;
+	background-color: lightgrey;
+	font-family: helvetica;
 }
