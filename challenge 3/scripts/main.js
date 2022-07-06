@@ -134,3 +134,6 @@ map.on('load', () => {
 
 
 });
+
+var markerText = new mapboxgl.Popup().setHTML('<h3>Landing Site: De Haagse Hogeschool</h3><p>Closed right now</p>');
+var marker = new mapboxgl.Marker().setLngLat([4.324439,52.067200]).setPopup(markerText).addTo(map);
