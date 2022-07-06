@@ -55,6 +55,8 @@ map.on('click', (event) => {
     });
 }
 
+getRoute(coords);
+
 });
 
 async function getRoute(end) {
@@ -137,3 +139,19 @@ map.on('load', () => {
 
 var markerText = new mapboxgl.Popup().setHTML('<h3>Landing Site: De Haagse Hogeschool</h3><p>Closed right now</p>');
 var marker = new mapboxgl.Marker().setLngLat([4.324439,52.067200]).setPopup(markerText).addTo(map);
+var myCustomMarker2 = document.createElement('div');
+var myCustomMarker3 = document.createElement('div');
+var myCustomMarker4 = document.createElement('div');
+
+myCustomMarker2.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/184/184482.png")';
+myCustomMarker3.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/184/184482.png")';
+myCustomMarker4.style.backgroundImage = 'url("https://cdn-icons-png.flaticon.com/512/184/184482.png")';
+myCustomMarker2.style.backgroundSize = '100%';
+myCustomMarker3.style.backgroundSize = '100%';
+myCustomMarker4.style.backgroundSize = '100%';
+var markerText2 = new mapboxgl.Popup().setHTML('<h3>Cool Bar</h3><p>Open now</p>');
+var markerText3 = new mapboxgl.Popup().setHTML('<h3>Tapas Bar Don Suerte</h3>');
+var markerText4 = new mapboxgl.Popup().setHTML('<h3>America Bar</h3><p>Free Beers for Martians</p>');
+var marker2 = new mapboxgl.Marker(myCustomMarker2).setLngLat([4.32595026812337,52.06239072562767 ]).setPopup(markerText2).addTo(map);
+var marker3 = new mapboxgl.Marker(myCustomMarker3).setLngLat([4.325415900429894,52.07427532973116]).setPopup(markerText3).addTo(map);
+var marker4 = new mapboxgl.Marker(myCustomMarker4).setLngLat([4.314381480786835,52.07617281803886]).setPopup(markerText4).addTo(map);
