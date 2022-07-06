@@ -56,6 +56,7 @@ map.on('click', (event) => {
 }
 
 getRoute(coords);
+getAPItravel('4.322840','52.067101', `${coords[0]}`, `${coords[1]}`);
 
 });
 
@@ -155,3 +156,37 @@ var markerText4 = new mapboxgl.Popup().setHTML('<h3>America Bar</h3><p>Free Beer
 var marker2 = new mapboxgl.Marker(myCustomMarker2).setLngLat([4.32595026812337,52.06239072562767 ]).setPopup(markerText2).addTo(map);
 var marker3 = new mapboxgl.Marker(myCustomMarker3).setLngLat([4.325415900429894,52.07427532973116]).setPopup(markerText3).addTo(map);
 var marker4 = new mapboxgl.Marker(myCustomMarker4).setLngLat([4.314381480786835,52.07617281803886]).setPopup(markerText4).addTo(map);
+var data = { duration: 0, distance: 0, temp: 0 };
+
+
+function getAPItravel(originCoord1, originCoord2, destCoord1, destCoord2) {
+	console.log(originCoord1, originCoord2, destCoord1, destCoord2)
+  // construct request
+  var request2 = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + originCoord1 + ',' + originCoord2 + ';' + destCoord1 + ',' + destCoord2 + '?geometries=geojson&access_token=pk.eyJ1IjoianVsbHlhcyIsImEiOiJjbDU4MzIxZWQwbHRmM2hxbmwzdDlwYzNwIn0.w5g8MRZ_80EdyWRHQrLwdw' // api_key=EhqRXPfeyTniCVir16c1PR1fmpPFK4mo17FjrRXm';
+console.log(request2);
+  // get current weather
+  fetch(request2)
+
+  // parse response to JSON format
+  .then
+  (
+    function(response)
+    {
+      return response.json();
+    }
+  )
+
+  // do something with response
+  .then
+  (
+    function(response)
+    {
+      // show full JSON object
+      console.log(response);
+			data = {duration: response.routes[0].duration, distance: response.routes[0].distance};
+
+			//xxxxx
+
+    }
+  );
+}
