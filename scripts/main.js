@@ -55,7 +55,7 @@ function setshipParameters() {
   fuelCapacity = oldFuelCapacity * (100 - time / 28748769);
   fuelCapacity = Math.round(fuelCapacity);
   currentSpeed = oldSpeed + 5 * time;
-  fuel.innerHTML = 'FUEL: 93% -' + fuelCapacity + 'liters left';
+  fuel.innerHTML = 'FUEL: 93%  ' + fuelCapacity + ' liters left';
   throttle.innerHTML = 'THROTTLE: 457';
   speed.innerHTML = 'SPEED: ' + currentSpeed;
 };
@@ -64,6 +64,26 @@ function setshipEnvironment(){
   updateTime();
   minutes = startMinutes - passedMin;
   seconds = startSeconds - passedSec;
-  distance.innerHTML = 'DISTANCE TRAVELED: ' + ;
-  arrival.innerHTML = 'ARRIVAL ESTIMATE: ' + months + 'Months' + days + ' Days, ' + hours + ' Hours, ' + minutes + ' minutes, ' + seconds + ' seconds.';
+  distance.innerHTML = 'DISTANCE TRAVELED: ' + distance ; //NOT WORKING, fix
+  arrival.innerHTML = 'ARRIVAL ESTIMATE: ' + months + ' Months, ' + days + ' Days, ' + hours + ' Hours, ' + minutes + ' minutes, ' + seconds + ' seconds.';
 };
+
+function setshipSupplies() {
+  updateTime();
+  foodLeft = ((months * 30 + days) * 2 * 99) - (time * 2 * 99);
+  food.innerHTML = 'FOOD: '  + foodLeft;
+  potWater.innerHTML = 'POTABLE WATER: ' + potWater / 2 * 5; //NOT WORKING, fix
+}
+
+resetInterval(true) //alert and pause after x seconds
+setTimeout(() => {
+  alert('!!! METEOR SHOWER !!!')
+  resetInterval(true)
+}, 3000);
+
+setTimeout(() => { // so that it stops after running for x seconds
+	resetInterval(false)
+	//clearInterval(interval)
+	alerta.innerHTML = 'ERRO'
+	console.log('teste');
+}, 10000); //arrow function
