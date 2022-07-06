@@ -1,0 +1,17 @@
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.fusos {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.fusos div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
