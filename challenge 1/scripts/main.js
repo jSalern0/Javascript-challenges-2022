@@ -85,11 +85,11 @@ setTimeout(() => {
   resetInterval(false)
   alert('!!! METEOR SHOWER !!!')
   resetInterval(true)
-}, 8000);
+}, 14000);
 
 setTimeout(() => { // so that it stops after running for x seconds
 	resetInterval(false)
 	//clearInterval(interval)
-	alerta.innerHTML = 'ERRORERRORERRORERRORERROR'
+	alerta.innerHTML = 'ERROR ERROR ERROR ERROR ERROR'
 	console.log('teste');
-}, 14000); //arrow function
+}, 24000); //arrow function
